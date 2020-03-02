@@ -9,10 +9,10 @@ class GildedRose {
 
     public void update_quality() {
         for (Goods good : goods) {
-            if (!good.name.equals("Aged Brie")
-                    && !good.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+            if (!isAgedBrie(good)
+                    && !isBackstagePasses(good)) {
                 if (good.quality > 0) {
-                    if (!good.name.equals("Sulfuras, Hand of Ragnaros")) {
+                    if (!isSulfuras(good)) {
                         good.quality = good.quality - 1;
                     }
                 }
@@ -20,7 +20,7 @@ class GildedRose {
                 if (good.quality < 50) {
                     good.quality = good.quality + 1;
 
-                    if (good.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                    if (isBackstagePasses(good)) {
                         if (good.sellIn < 11) {
                             if (good.quality < 50) {
                                 good.quality = good.quality + 1;
@@ -36,15 +36,15 @@ class GildedRose {
                 }
             }
 
-            if (!good.name.equals("Sulfuras, Hand of Ragnaros")) {
+            if (!isSulfuras(good)) {
                 good.sellIn = good.sellIn - 1;
             }
 
             if (good.sellIn < 0) {
-                if (!good.name.equals("Aged Brie")) {
-                    if (!good.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                if (!isAgedBrie(good)) {
+                    if (!isBackstagePasses(good)) {
                         if (good.quality > 0) {
-                            if (!good.name.equals("Sulfuras, Hand of Ragnaros")) {
+                            if (!isSulfuras(good)) {
                                 good.quality = good.quality - 1;
                             }
                         }
@@ -58,5 +58,17 @@ class GildedRose {
                 }
             }
         }
+    }
+
+    private boolean isSulfuras(Goods good) {
+        return good.name.equals("Sulfuras, Hand of Ragnaros");
+    }
+
+    private boolean isAgedBrie(Goods good) {
+        return good.name.equals("Aged Brie");
+    }
+
+    private boolean isBackstagePasses(Goods good) {
+        return good.name.equals("Backstage passes to a TAFKAL80ETC concert");
     }
 }
