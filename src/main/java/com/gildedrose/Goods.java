@@ -41,21 +41,9 @@ public class Goods {
         return false;
     }
 
-    private void updateSellInWhenExpired() {
-        if (!this.isAgedBrie()) {
-            if (!this.isBackstagePasses()) {
-                if (quality > 0) {
-                    if (!this.isSulfuras()) {
-                        quality = quality - 1;
-                    }
-                }
-            } else {
-                quality = 0;
-            }
-        } else {
-            if (quality < 50) {
-                quality = quality + 1;
-            }
+    public void updateSellInWhenExpired() {
+        if (this.quality > 0) {
+            this.quality = this.quality - 1;
         }
     }
 

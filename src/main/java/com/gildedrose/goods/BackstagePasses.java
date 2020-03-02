@@ -12,4 +12,9 @@ public class BackstagePasses extends Goods {
     public boolean isBackstagePasses() {
         return true;
     }
+
+    @Override
+    public void updateSellInWhenExpired() {
+        this.quality = 0;
+    }
 }

@@ -12,4 +12,11 @@ public class AgedBrie extends Goods {
     public boolean isAgedBrie() {
         return true;
     }
+
+    @Override
+    public void updateSellInWhenExpired() {
+        if (this.quality < 50) {
+            this.quality = this.quality + 1;
+        }
+    }
 }
