@@ -41,7 +41,7 @@ public class GildedRoseTest {
 
         // when
         GildedRose gildedRose = new GildedRose(goods);
-        gildedRose.updateQuality();
+        gildedRose.updateGoodsEveryDay();
 
         // then
         assertThat(Arrays.toString(gildedRose.goods),
@@ -64,8 +64,8 @@ public class GildedRoseTest {
 
         // when
         GildedRose gildedRose = new GildedRose(goods);
-        gildedRose.updateQuality();
-        gildedRose.updateQuality();
+        gildedRose.updateGoodsEveryDay();
+        gildedRose.updateGoodsEveryDay();
 
         // then
         assertThat(Arrays.toString(gildedRose.goods),

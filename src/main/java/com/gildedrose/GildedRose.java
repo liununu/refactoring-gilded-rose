@@ -9,7 +9,7 @@ class GildedRose {
         this.goods = goods;
     }
 
-    public void updateQuality() {
+    public void updateGoodsEveryDay() {
         Arrays.stream(goods).forEach(Goods::updateInfoEveryDay);
     }
 }
