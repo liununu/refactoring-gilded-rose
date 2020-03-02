@@ -29,18 +29,6 @@ public class Goods {
         }
     }
 
-    public boolean isSulfuras() {
-        return false;
-    }
-
-    public boolean isAgedBrie() {
-        return false;
-    }
-
-    public boolean isBackstagePasses() {
-        return false;
-    }
-
     public void updateSellInWhenExpired() {
         if (this.quality > 0) {
             this.quality = this.quality - 1;

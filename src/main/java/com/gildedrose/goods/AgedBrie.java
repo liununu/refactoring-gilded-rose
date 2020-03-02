@@ -9,11 +9,6 @@ public class AgedBrie extends Goods {
     }
 
     @Override
-    public boolean isAgedBrie() {
-        return true;
-    }
-
-    @Override
     public void updateQuality() {
         if (this.quality < 50) {
             this.quality = this.quality + 1;

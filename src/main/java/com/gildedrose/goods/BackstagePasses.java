@@ -9,11 +9,6 @@ public class BackstagePasses extends Goods {
     }
 
     @Override
-    public boolean isBackstagePasses() {
-        return true;
-    }
-
-    @Override
     public void updateQuality() {
         if (this.quality < 50) {
             this.quality = this.quality + 1;

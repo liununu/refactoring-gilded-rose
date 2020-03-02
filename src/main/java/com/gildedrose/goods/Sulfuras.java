@@ -9,11 +9,6 @@ public class Sulfuras extends Goods {
     }
 
     @Override
-    public boolean isSulfuras() {
-        return true;
-    }
-
-    @Override
     public void updateQuality() {
     }
 
