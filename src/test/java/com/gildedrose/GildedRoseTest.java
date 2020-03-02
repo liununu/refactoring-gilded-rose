@@ -21,7 +21,7 @@ public class GildedRoseTest {
         GildedRose gildedRose = new GildedRose(goods);
 
         // then
-        assertThat(Arrays.toString(gildedRose.goods),
+        assertThat(Arrays.toString(gildedRose.getGoods()),
                 is("[+5 Dexterity Vest, 10, 20, " +
                         "Aged Brie, 2, 0, " +
                         "Elixir of the Mongoose, 5, 7, " +
@@ -44,7 +44,7 @@ public class GildedRoseTest {
         gildedRose.updateGoodsEveryDay();
 
         // then
-        assertThat(Arrays.toString(gildedRose.goods),
+        assertThat(Arrays.toString(gildedRose.getGoods()),
                 is("[+5 Dexterity Vest, 9, 19, " +
                         "Aged Brie, 1, 1, " +
                         "Elixir of the Mongoose, 4, 6, " +
@@ -68,7 +68,7 @@ public class GildedRoseTest {
         gildedRose.updateGoodsEveryDay();
 
         // then
-        assertThat(Arrays.toString(gildedRose.goods),
+        assertThat(Arrays.toString(gildedRose.getGoods()),
                 is("[+5 Dexterity Vest, 8, 18, " +
                         "Aged Brie, 0, 2, " +
                         "Elixir of the Mongoose, 3, 5, " +
