@@ -47,32 +47,9 @@ public class Goods {
         }
     }
 
-    private void updateQuality() {
-        if (!this.isAgedBrie()
-                && !this.isBackstagePasses()) {
-            if (quality > 0) {
-                if (!this.isSulfuras()) {
-                    quality = quality - 1;
-                }
-            }
-        } else {
-            if (quality < 50) {
-                quality = quality + 1;
-
-                if (this.isBackstagePasses()) {
-                    if (sellIn < 11) {
-                        if (quality < 50) {
-                            quality = quality + 1;
-                        }
-                    }
-
-                    if (sellIn < 6) {
-                        if (quality < 50) {
-                            quality = quality + 1;
-                        }
-                    }
-                }
-            }
+    public void updateQuality() {
+        if (this.quality > 0) {
+            this.quality = this.quality - 1;
         }
     }
 
