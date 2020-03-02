@@ -49,7 +49,7 @@ class GildedRose {
                             }
                         }
                     } else {
-                        good.quality = good.quality - good.quality;
+                        good.quality = 0;
                     }
                 } else {
                     if (good.quality < 50) {
