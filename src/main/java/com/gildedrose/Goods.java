@@ -70,15 +70,15 @@ public class Goods {
         }
     }
 
-    private boolean isSulfuras() {
-        return this.name.equals("Sulfuras, Hand of Ragnaros");
+    public boolean isSulfuras() {
+        return false;
     }
 
-    private boolean isAgedBrie() {
-        return this.name.equals("Aged Brie");
+    public boolean isAgedBrie() {
+        return false;
     }
 
-    private boolean isBackstagePasses() {
-        return this.name.equals("Backstage passes to a TAFKAL80ETC concert");
+    public boolean isBackstagePasses() {
+        return false;
     }
 }
