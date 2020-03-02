@@ -12,13 +12,13 @@ public class GildedRoseTest {
     @Test
     public void should_keep_original_quality_when_create_gilded_rose_without_update() {
         // given
-        Item[] items = buildItemsForTest();
+        Goods[] goods = buildItemsForTest();
 
         // when
-        GildedRose gildedRose = new GildedRose(items);
+        GildedRose gildedRose = new GildedRose(goods);
 
         // then
-        assertThat(Arrays.toString(gildedRose.items),
+        assertThat(Arrays.toString(gildedRose.goods),
                 is("[+5 Dexterity Vest, 10, 20, " +
                         "Aged Brie, 2, 0, " +
                         "Elixir of the Mongoose, 5, 7, " +
@@ -34,14 +34,14 @@ public class GildedRoseTest {
     @Test
     public void should_update_first_day_quality_when_gilded_rose_update_once() {
         // given
-        Item[] items = buildItemsForTest();
+        Goods[] goods = buildItemsForTest();
 
         // when
-        GildedRose gildedRose = new GildedRose(items);
+        GildedRose gildedRose = new GildedRose(goods);
         gildedRose.update_quality();
 
         // then
-        assertThat(Arrays.toString(gildedRose.items),
+        assertThat(Arrays.toString(gildedRose.goods),
                 is("[+5 Dexterity Vest, 9, 19, " +
                         "Aged Brie, 1, 1, " +
                         "Elixir of the Mongoose, 4, 6, " +
@@ -57,15 +57,15 @@ public class GildedRoseTest {
     @Test
     public void should_update_second_day_quality_when_gilded_rose_update_twice() {
         // given
-        Item[] items = buildItemsForTest();
+        Goods[] goods = buildItemsForTest();
 
         // when
-        GildedRose gildedRose = new GildedRose(items);
+        GildedRose gildedRose = new GildedRose(goods);
         gildedRose.update_quality();
         gildedRose.update_quality();
 
         // then
-        assertThat(Arrays.toString(gildedRose.items),
+        assertThat(Arrays.toString(gildedRose.goods),
                 is("[+5 Dexterity Vest, 8, 18, " +
                         "Aged Brie, 0, 2, " +
                         "Elixir of the Mongoose, 3, 5, " +
@@ -78,17 +78,17 @@ public class GildedRoseTest {
                         "Conjured Mana Cake, 1, 4]"));
     }
 
-    private Item[] buildItemsForTest() {
-        return new Item[]{
-                new Item("+5 Dexterity Vest", 10, 20),
-                new Item("Aged Brie", 2, 0),
-                new Item("Elixir of the Mongoose", 5, 7),
-                new Item("Sulfuras, Hand of Ragnaros", 0, 80),
-                new Item("Sulfuras, Hand of Ragnaros", -1, 80),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 1, 20),
-                new Item("Conjured Mana Cake", 3, 6)};
+    private Goods[] buildItemsForTest() {
+        return new Goods[]{
+                new Goods("+5 Dexterity Vest", 10, 20),
+                new Goods("Aged Brie", 2, 0),
+                new Goods("Elixir of the Mongoose", 5, 7),
+                new Goods("Sulfuras, Hand of Ragnaros", 0, 80),
+                new Goods("Sulfuras, Hand of Ragnaros", -1, 80),
+                new Goods("Backstage passes to a TAFKAL80ETC concert", 15, 20),
+                new Goods("Backstage passes to a TAFKAL80ETC concert", 10, 49),
+                new Goods("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+                new Goods("Backstage passes to a TAFKAL80ETC concert", 1, 20),
+                new Goods("Conjured Mana Cake", 3, 6)};
     }
 }
