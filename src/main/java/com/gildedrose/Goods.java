@@ -42,10 +42,10 @@ public class Goods {
     }
 
     public void updateSellIn() {
-        sellIn = sellIn - 1;
+        this.sellIn = this.sellIn - 1;
     }
 
     private boolean isExpired() {
-        return sellIn < 0;
+        return this.sellIn < 0;
     }
 }

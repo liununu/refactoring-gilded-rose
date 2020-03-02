@@ -11,18 +11,14 @@ public class BackstagePasses extends Goods {
     @Override
     public void updateQuality() {
         if (this.quality < 50) {
-            this.quality = this.quality + 1;
+            increaseQuality();
 
-            if (this.sellIn < 11) {
-                if (this.quality < 50) {
-                    this.quality = this.quality + 1;
-                }
+            if (this.sellIn < 11 && this.quality < 50) {
+                increaseQuality();
             }
 
-            if (this.sellIn < 6) {
-                if (this.quality < 50) {
-                    this.quality = this.quality + 1;
-                }
+            if (this.sellIn < 6 && this.quality < 50) {
+                increaseQuality();
             }
         }
     }
@@ -30,5 +26,9 @@ public class BackstagePasses extends Goods {
     @Override
     public void updateSellInWhenExpired() {
         this.quality = 0;
+    }
+
+    private void increaseQuality() {
+        this.quality = this.quality + 1;
     }
 }

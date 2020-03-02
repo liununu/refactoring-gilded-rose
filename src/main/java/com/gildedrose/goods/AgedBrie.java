@@ -11,14 +11,18 @@ public class AgedBrie extends Goods {
     @Override
     public void updateQuality() {
         if (this.quality < 50) {
-            this.quality = this.quality + 1;
+            increaseQuality();
         }
     }
 
     @Override
     public void updateSellInWhenExpired() {
         if (this.quality < 50) {
-            this.quality = this.quality + 1;
+            increaseQuality();
         }
+    }
+
+    private void increaseQuality() {
+        this.quality = this.quality + 1;
     }
 }
