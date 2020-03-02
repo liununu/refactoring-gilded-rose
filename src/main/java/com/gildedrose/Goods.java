@@ -88,10 +88,8 @@ public class Goods {
         }
     }
 
-    private void updateSellIn() {
-        if (!this.isSulfuras()) {
-            sellIn = sellIn - 1;
-        }
+    public void updateSellIn() {
+        sellIn = sellIn - 1;
     }
 
     private boolean isExpired() {

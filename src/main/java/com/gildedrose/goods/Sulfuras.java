@@ -12,4 +12,8 @@ public class Sulfuras extends Goods {
     public boolean isSulfuras() {
         return true;
     }
+
+    @Override
+    public void updateSellIn() {
+    }
 }
