@@ -10,6 +10,6 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        Arrays.stream(goods).forEach(Goods::updateQuality);
+        Arrays.stream(goods).forEach(Goods::updateInfoEveryDay);
     }
 }

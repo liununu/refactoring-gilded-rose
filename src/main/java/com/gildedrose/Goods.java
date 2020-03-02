@@ -19,7 +19,47 @@ public class Goods {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 
-    void updateQuality() {
+    void updateInfoEveryDay() {
+        updateQuality();
+
+        updateSellIn();
+
+        if (isExpired()) {
+            updateSellInWhenExpired();
+        }
+    }
+
+    public boolean isSulfuras() {
+        return false;
+    }
+
+    public boolean isAgedBrie() {
+        return false;
+    }
+
+    public boolean isBackstagePasses() {
+        return false;
+    }
+
+    private void updateSellInWhenExpired() {
+        if (!this.isAgedBrie()) {
+            if (!this.isBackstagePasses()) {
+                if (quality > 0) {
+                    if (!this.isSulfuras()) {
+                        quality = quality - 1;
+                    }
+                }
+            } else {
+                quality = 0;
+            }
+        } else {
+            if (quality < 50) {
+                quality = quality + 1;
+            }
+        }
+    }
+
+    private void updateQuality() {
         if (!this.isAgedBrie()
                 && !this.isBackstagePasses()) {
             if (quality > 0) {
@@ -46,39 +86,15 @@ public class Goods {
                 }
             }
         }
+    }
 
+    private void updateSellIn() {
         if (!this.isSulfuras()) {
             sellIn = sellIn - 1;
         }
-
-        if (sellIn < 0) {
-            if (!this.isAgedBrie()) {
-                if (!this.isBackstagePasses()) {
-                    if (quality > 0) {
-                        if (!this.isSulfuras()) {
-                            quality = quality - 1;
-                        }
-                    }
-                } else {
-                    quality = 0;
-                }
-            } else {
-                if (quality < 50) {
-                    quality = quality + 1;
-                }
-            }
-        }
     }
 
-    public boolean isSulfuras() {
-        return false;
-    }
-
-    public boolean isAgedBrie() {
-        return false;
-    }
-
-    public boolean isBackstagePasses() {
-        return false;
+    private boolean isExpired() {
+        return sellIn < 0;
     }
 }
